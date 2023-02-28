@@ -1,0 +1,363 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    color: #181818;
+    font-family: "Avenir Next", "Avenir", sans-serif;
+}
+
+body {
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    height: 100vh;
+}
+
+.bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 120px;
+    /* border-bottom: 2px solid black; */
+    z-index: 20;
+}
+
+.logo {
+    position: absolute;
+    display: flex;
+    align-items: center;
+}
+
+.logo img{
+    width: 350%;
+    max-width: 300px;
+    object-fit: cover;
+    transition-duration: 200ms;
+}
+
+.logo img:hover {
+    transition-duration: 200ms;
+    transform: scale(1.05);
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.nav ul {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-end
+}
+
+.nav ul li a{
+    /* border: 1px solid black; */
+    /* border-radius: 7px; */
+    padding-left: 30px;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.nav ul li a:hover {
+    color: #8DA3DF;
+}
+
+.maintitle {
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+
+.maintitle img{
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 500px;
+}
+
+#titleslogan {
+    position: absolute;
+    color: white;
+    width: 40%;
+
+    font-size: 1.7rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.473);
+
+    left: 20%;
+    top: 200px;
+}
+
+
+
+
+/* __________________ BARMENU _______________________ */
+
+
+
+.barmenu {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 12.5%;
+    z-index: 1;
+  
+    -webkit-user-select: none;
+    user-select: none;
+
+    opacity: 0;
+}
+
+.barmenu input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+.barmenu span
+{
+  display: block;
+  width: 36px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #191919;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+.barmenu span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+.barmenu span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+.barmenu input:checked ~ span
+{
+  opacity: 1;
+  background: #232323;
+}
+
+.barmenu input:checked ~ span:nth-last-child(1)
+{
+  transform: rotate(90deg) translate(-22px, -16px);
+}
+
+.barmenu input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(90deg) translate(-22px, -5px);
+}
+
+.barmenu input:checked ~ span:nth-last-child(3)
+{
+    transform: rotate(90deg) translate(-4px, -27px);
+}
+
+
+#menu
+{
+    display: none;
+    width: 150px;
+    height: 100vh;
+    position: absolute;
+
+    text-align: right;
+
+    right: -310px;
+    top: 0px;
+    padding: 30px;
+    padding-top: 100px;
+    background: #ffffff;
+    /* box-shadow: rgb(0 0 0 / 38%) 0px 3px 5px; */
+    list-style-type: none;
+    transition-duration: 300ms;
+
+    z-index: 0;
+}
+
+#menu li
+{
+  padding: 10px 0px;
+  font-size: 22px;
+}
+
+.barmenu input:checked ~ #menu
+{
+    transform-origin: 0% 0%;
+    transform: translate(-100%, 0);
+    
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu a:hover {
+    color: rgb(255, 0, 93);
+}
+
+/* ____________________________________________*/
+
+
+
+
+.search {
+    width: 60%;
+    height: 80px;
+    top: 575px;
+    border-radius: 10px;
+    border: 1px solid rgb(159, 159, 159);
+    position: absolute;
+    display: flex;
+    grid-template-columns: repeat(2, 4fr) 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    background-color: #fff;
+    z-index: 30;
+    }
+
+    .secsearch input {
+        border: 0;
+        width: 75%;
+        height: 20px;
+    }
+
+    .secsearch {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .secsearch h2 {
+        display: flex;
+        justify-content: flex-start;
+        color: rgb(108, 108, 108);
+        font-size: 12px;
+        margin-left: 12.5%;
+        font-weight: normal;
+        margin-bottom: 5px;
+    }
+
+    .searchtitle {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+    }
+    
+    #div1 { 
+        width: 60%;
+        display: flex;
+        border-top-left-radius: 10px;
+        border-right: 1px solid rgb(219, 219, 219);
+    }
+    
+    #div2 { 
+        width: 60%;
+        display: flex;
+    }
+    
+    #div3 { 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        border-top-right-radius: 10px; 
+        border-left: 1px solid rgb(219, 219, 219);
+    }
+    
+    .loupeicon {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+    }
+
+    .loupeicon img{
+        width: 40px;
+        transition-duration: 300ms;
+    }
+
+    .loupeicon img:hover {
+        transform: scale(1.1);
+        transition-duration: 300ms;
+        opacity: 50%;
+    }
+
+
+/* _____________________________________________________ */
+
+
+@media (max-width: 830px)  {
+
+    .bar {
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: #ffffff;
+        z-index: 20; 
+    }
+
+    .barmenu {
+        opacity: 1;
+    }
+
+    .logo {
+        top: 8px;
+        width: 60px;
+        height: 40px;
+    }
+    
+    .nav {
+        opacity: 100;
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content:center;
+        top: 60px;
+        padding: 20px 0px;
+        opacity: 100;
+        z-index: 10;
+    }
+    
+    .nav ul {
+        width: 60%;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around;
+        opacity: 0;
+    }
+}
